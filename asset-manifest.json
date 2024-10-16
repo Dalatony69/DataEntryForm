@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/DataEntryForm/static/css/main.1ecc7d1d.css",
+    "main.js": "/DataEntryForm/static/js/main.3e8c6cea.js",
+    "static/js/453.ed3810f9.chunk.js": "/DataEntryForm/static/js/453.ed3810f9.chunk.js",
+    "static/media/bg-sidebar-desktop.svg": "/DataEntryForm/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/icon-advanced.svg": "/DataEntryForm/static/media/icon-advanced.705bd10c4c1f688871d7.svg",
+    "index.html": "/DataEntryForm/index.html",
+    "static/media/icon-pro.svg": "/DataEntryForm/static/media/icon-pro.2e7e377da9c658d60862.svg",
+    "static/media/icon-arcade.svg": "/DataEntryForm/static/media/icon-arcade.a08c098289a31bb2f66d.svg",
+    "main.1ecc7d1d.css.map": "/DataEntryForm/static/css/main.1ecc7d1d.css.map",
+    "main.3e8c6cea.js.map": "/DataEntryForm/static/js/main.3e8c6cea.js.map",
+    "453.ed3810f9.chunk.js.map": "/DataEntryForm/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ecc7d1d.css",
+    "static/js/main.3e8c6cea.js"
+  ]
+}
