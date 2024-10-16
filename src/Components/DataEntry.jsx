@@ -9,10 +9,10 @@ function DataEntry(){
     return(
         <div className="DataEntry">
                 <Routes>
-                    <Route path='/' element={<StepOne/>}/>
-                    <Route path='/StepTwo' element={<StepTwo/>}/>
-                    <Route path='/StepThree' element={<StepThree/>}/>
-                    <Route path='/StepFour' element={<StepFour/>}/>
+                    <Route path='/DataEntryForm' element={<StepOne/>}/>
+                    <Route path='/DataEntryForm/StepTwo' element={<StepTwo/>}/>
+                    <Route path='/DataEntryForm/StepThree' element={<StepThree/>}/>
+                    <Route path='/DataEntryForm/StepFour' element={<StepFour/>}/>
                 </Routes>
         </div>
     );
