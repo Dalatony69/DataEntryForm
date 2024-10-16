@@ -6,7 +6,7 @@ import { HashRouter as Router } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="Container"> 
             <div className='ControlBarHolder'>
               <ControlBar/>
