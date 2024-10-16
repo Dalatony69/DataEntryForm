@@ -1,38 +1,546 @@
-.App {
-  text-align: center;
+/* START SETTING MANAGEMENT */
+:root{
+  --MarineBlue: hsl(213, 96%, 18%);
+  --PurplishBlue: hsl(243, 100%, 62%);
+  --PastelBlue: hsl(228, 100%, 84%);
+  --LightBlue: hsl(206, 94%, 87%);
+  --StrawberryRed: hsl(354, 84%, 57%);
+  --CoolGray: hsl(231, 11%, 63%);
+  --LightGray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
+/* END SETTING MANAGEMENT */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* START APP STYLING */
+.App{
+  width: 100%;
+  height: 100vh;
+  background-color:var(--Magnolia);
+  display: grid;
+  place-items: center;
 }
+.App .Container{
+  background-color: white;
+  width: 60%;
+  height: 80%;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  padding: 1%;
+  border: 2px solid var(--CoolGray);
+}
+/* END APP STYLING */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* START CONTROL BAR STYLING */
+.App .Container .ControlBarHolder{
+  flex: 1;
+  background-image: url(../../assets/images/bg-sidebar-desktop.svg);
+  background-position: bottom;
+  border-radius: 20px;
+  box-shadow: -10px 10px 15px var(--MarineBlue);
+}
+.ControlBar{
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+.ControlBar .holder{
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+.ControlBar .holder .step{
+  display: flex;
+}
+.ControlBar .holder .step .number{
+  display: grid;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ControlBar .holder .step .info{
+  padding-left: 10%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ControlBar .holder .step .info .clarification{
+  color: var(--CoolGray);
+  font-size: 13px;
+  font-weight: bold;
+}
+.ControlBar .holder .step .info .detail{
+  font-size: 15px;
+  font-weight: bolder;
+}
+/* END CONTROL BAR STYLING */
+
+/* START DATA ENTRY STYLING */
+.App .Container .DataEntryHolder{
+  flex: 2;
+  padding: 2% 5% 0 5%;
+}
+.DataEntry{
+  width: 100%;
+  height: 100%;
+}
+.DataEntry .StepOnePanel{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.DataEntry .StepOnePanel .info{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepOnePanel .info .title{
+  font-size: 30px;
+  font-weight: 700;
+}
+.DataEntry .StepOnePanel .info .subtitle{
+  color: var(--CoolGray);
+}
+.DataEntry .StepOnePanel .formal{
+  flex: 5;
+}
+.DataEntry .StepOnePanel .formal form{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  font-weight: bold;
+}
+.DataEntry .StepOnePanel .formal form div{
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepOnePanel .formal form div input{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid var(--CoolGray);
+}
+.DataEntry .StepOnePanel .click{
+  flex: 2;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.DataEntry .StepOnePanel .click button{
+  width: 25%;
+  height: 50%;
+  background-color: var(--MarineBlue);
+  color: var(--Alabaster);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.DataEntry .StepTwoPanel{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.DataEntry .StepTwoPanel .info{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepTwoPanel .info .title{
+  font-size: 30px;
+  font-weight: 700;
+}
+.DataEntry .StepTwoPanel .info .subtitle{
+  color: var(--CoolGray);
+}
+.DataEntry .StepTwoPanel .formal{
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepTwoPanel .formal .choose{
+  flex: 7;
+  display: flex;
+  gap: 3%;
+}
+.DataEntry .StepTwoPanel .formal .choose .holder{
+  border: 2px solid var(--MarineBlue);
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: .2s ;
+}
+.DataEntry .StepTwoPanel .formal .choose .holder:hover{
+  background-color: var(--LightGray);
+  flex: 2;
+}
+.DataEntry .StepTwoPanel .formal .choose div .logo{
+  flex: 7;
+}
+.DataEntry .StepTwoPanel .formal .choose div .logo div{
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 40%;
+  margin: 10%;
+}
+.arcade{  background-image: url(../../assets/images/icon-arcade.svg);}
+.advanced{  background-image: url(../../assets/images/icon-advanced.svg);}
+.pro{  background-image: url(../../assets/images/icon-pro.svg);}
+
+.DataEntry .StepTwoPanel .formal .choose div .type{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+}
+.DataEntry .StepTwoPanel .formal .choose div .type .primary{
+  font-weight: bolder;
+  color: var(--MarineBlue);
+}
+.DataEntry .StepTwoPanel .formal .choose div .type .secondary{
+  color: var(--CoolGray);
+}
+.DataEntry .StepTwoPanel .formal .set{
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+}
+.DataEntry .StepTwoPanel .formal .set .holder{  
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+}
+.DataEntry .StepTwoPanel .formal .set .holder span{
+  font-weight: bolder;
+  color: var(--MarineBlue);
+  cursor: pointer;
+} 
+.DataEntry .StepTwoPanel .formal .set .holder .switch{
+  background-color: var(--MarineBlue);
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 30%;
+  padding: 1%;
+  display: flex;
+  transition: 2s;
+  cursor: pointer;
+}
+.DataEntry .StepTwoPanel .formal .set .holder .switch div{
+  background-color: var(--White);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: justify-content 2s ease;
+}
+.DataEntry .StepTwoPanel .click{
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-left: 2%;
+}
+.DataEntry .StepTwoPanel .click div{
+  font-weight: bold;
+  color: var(--CoolGray);
+  margin-bottom: 3%;
+  cursor: pointer;
+  transition: .2s;
+}
+.DataEntry .StepTwoPanel .click div:hover{
+  color: var(--MarineBlue);
+}
+.DataEntry .StepTwoPanel .click button{
+  width: 25%;
+  height: 50%;
+  background-color: var(--MarineBlue);
+  color: var(--Alabaster);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.DataEntry .StepThreePanel{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepThreePanel .info{
+  flex: 2;
+}
+.DataEntry .StepThreePanel .info{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepThreePanel .info .title{
+  font-size: 30px;
+  font-weight: 700;
+}
+.DataEntry .StepThreePanel .info .subtitle{
+  color: var(--CoolGray);
+}
+.DataEntry .StepThreePanel .formal{
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.DataEntry .StepThreePanel .formal .holder{
+  flex: 1;
+  border: 2px solid var(--PurplishBlue);
+  display: flex;
+  border-radius: 10px;
+}
+.DataEntry .StepThreePanel .formal .holder .tick{
+  flex: 2;
+  display: grid;
+  place-items: center;
+}
+.DataEntry .StepThreePanel .formal .holder .tick div{
+  width: 30%;
+  height: 30%;
+}
+.DataEntry .StepThreePanel .formal .holder .tick div input{
+  width: 100%;
+  height: 100%;
+}
+.DataEntry .StepThreePanel .formal .holder .explain{
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.DataEntry .StepThreePanel .formal .holder .explain .one{
+  font-weight: bolder;
+}
+.DataEntry .StepThreePanel .formal .holder .explain .two{
+  color: var(--CoolGray);
+  font-size: 15px;
+}
+.DataEntry .StepThreePanel .formal .holder .price{
+  flex: 2;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  color: var(--CoolGray);
+}
+.DataEntry .StepThreePanel .click{
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.DataEntry .StepThreePanel .click div{
+  font-weight: bold;
+  color: var(--CoolGray);
+  margin-bottom: 3%;
+  cursor: pointer;
+  transition: .2s;
+  padding-left: 2%;
+}
+.DataEntry .StepThreePanel .click div:hover{
+  color: var(--MarineBlue);
+}
+.DataEntry .StepThreePanel .click button{
+  width: 25%;
+  height: 50%;
+  background-color: var(--MarineBlue);
+  color: var(--Alabaster);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.DataEntry .StepFourPanel{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepFourPanel .info{
+  flex: 2;
+}
+.DataEntry .StepFourPanel .info{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.DataEntry .StepFourPanel .info .title{
+  font-size: 30px;
+  font-weight: 700;
+}
+.DataEntry .StepFourPanel .info .subtitle{
+  color: var(--CoolGray);
+}
+.DataEntry .StepFourPanel .formal{
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5%;
+  padding: 5%;
+  background-color: var(--Magnolia);
+  border-radius: 10px;
+}
+.DataEntry .StepFourPanel .formal .plan{
+  display: flex;
+  justify-content: space-between;
+  color: var(--MarineBlue);
+  font-weight: bolder;
+  flex: 1;
+}
+.DataEntry .StepFourPanel .formal .services{
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.DataEntry .StepFourPanel .formal .extra{
+  display: flex;
+  justify-content: space-between;
+  color: var(--CoolGray);
+}
+.DataEntry .StepFourPanel .formal .total{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  color: var(--MarineBlue);
+  font-weight: bolder;
+  flex: 2;
+}
+.DataEntry .StepFourPanel .click{
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.DataEntry .StepFourPanel .click div{
+  font-weight: bold;
+  color: var(--CoolGray);
+  margin-bottom: 3%;
+  cursor: pointer;
+  transition: .2s;
+  padding-left: 2%;
+}
+.DataEntry .StepFourPanel .click div:hover{
+  color: var(--MarineBlue);
+}
+.DataEntry .StepFourPanel .click button{
+  width: 25%;
+  height: 50%;
+  background-color: var(--MarineBlue);
+  color: var(--Alabaster);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* END DATA ENTRY STYLING */
+
+@media(max-width:400px){
+  
+/* START APP STYLING */
+
+.App .Container{
+  width: 90%;
+  height: 80%;
+  flex-direction: column;
+  padding: 0%;
+}
+/* END APP STYLING */
+
+/* START CONTROL BAR STYLING */
+.App .Container .ControlBarHolder{
+  background-image: url(../../assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.ControlBar{
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+}
+.ControlBar .holder{
+  flex-direction:row;
+  justify-content: center;
+  align-items:end;
+  padding-top: 5%;
+  gap: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ControlBar .holder .step .info{
+  display: none;
+}
+/* END CONTROL BAR STYLING */
+
+/* START DATA ENTRY STYLING */
+.App .Container .DataEntryHolder{
+  padding: 5%;
+  flex: 4;
+}
+
+.DataEntry .StepOnePanel .info{
+  gap: 5%;
+}
+.DataEntry .StepTwoPanel .formal .choose{
+  flex: 8;
+  flex-direction: column;
+}
+.DataEntry .StepTwoPanel .formal .choose .holder{
+  flex-direction: row;
+}
+.DataEntry .StepTwoPanel .formal .choose div .logo{
+  flex: 2;
+  display: grid;
+  place-items: center;
+}
+.DataEntry .StepTwoPanel .formal .choose div .logo div{
+  width: 70%;
+  height: 60%;
+}
+.DataEntry .StepTwoPanel .formal .choose div .type{
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.DataEntry .StepTwoPanel .formal .set{
+  flex: 2;
+}
+.DataEntry .StepTwoPanel .formal .set .holder{  
+  width: 70%;
+}
+
+/* END DATA ENTRY STYLING */
+  
 }
