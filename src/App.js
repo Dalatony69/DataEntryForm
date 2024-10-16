@@ -5,8 +5,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App" basename={process.env.PUBLIC_URL}>
-      <Router>
+    <div className="App">
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="Container"> 
             <div className='ControlBarHolder'>
               <ControlBar/>
