@@ -1,7 +1,7 @@
 import './App.css';
 import ControlBar from './Components/ControlBar';
 import DataEntry from './Components/DataEntry';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
